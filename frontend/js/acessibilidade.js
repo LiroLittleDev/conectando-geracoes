@@ -43,24 +43,45 @@ function toggleContrast() {
   updatePreferences();
 }
 
-function lerTexto(id) {
-  const elemento = document.getElementById(id);
-  if (elemento) {
-    const texto = elemento.innerText || elemento.textContent;
-    const fala = new SpeechSynthesisUtterance(texto);
-    fala.lang = 'pt-BR';
-    speechSynthesis.cancel(); // Para evitar sobreposição
-    speechSynthesis.speak(fala);
+function removerEmojis(texto) {
+  return texto.replace(
+    /([\u2700-\u27BF]|[\uE000-\uF8FF]|[\uD83C-\uDBFF\uDC00-\uDFFF]|\uFE0F|\u200D)/g,
+    ""
+  );
+}
+
+function lerTexto(selector) {
+  const element = document.querySelector(selector);
+  if (element) {
+    const textoOriginal = element.textContent || element.innerText;
+    const textoLimpo = removerEmojis(textoOriginal);
+    const speech = new SpeechSynthesisUtterance(textoLimpo);
+    speech.lang = "pt-BR";
+    speech.rate = 0.9;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+  } else {
+    console.error(`Elemento não encontrado para o seletor: ${selector}`);
   }
 }
 
-function lerTextoPagina() {
-  const texto = document.body.innerText;
-  const fala = new SpeechSynthesisUtterance(texto);
-  fala.lang = 'pt-BR';
-  speechSynthesis.cancel();
-  speechSynthesis.speak(fala);
+function lerClasse(className) {
+  const elements = document.getElementsByClassName(className);
+  if (elements.length > 0) {
+    Array.from(elements).forEach((element) => {
+      const textoOriginal = element.textContent || element.innerText;
+      const textoLimpo = removerEmojis(textoOriginal);
+      const speech = new SpeechSynthesisUtterance(textoLimpo);
+      speech.lang = "pt-BR";
+      speech.rate = 0.9;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(speech);
+    });
+  } else {
+    console.error(`Nenhum elemento encontrado para a classe: ${className}`);
+  }
 }
+
 
 window.onload = () => {
   // Reaplicando preferências já salvas

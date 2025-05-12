@@ -34,8 +34,16 @@
 
     <header class="hero-section">
         <div class="container text-center">
-            <h1 class="display-4 animate-in">Inclusão Digital para Idosos</h1>
-            <p class="lead animate-in" style="animation-delay: 0.2s;">Conectando gerações através da tecnologia</p>
+            <h1 class="display-4 animate-in" id="titulo-principal">
+                Inclusão Digital para Idosos
+                <button class="btn btn-sm btn-outline-secondary ms-2" onclick="lerTexto('#titulo-principal')">🔊</button>
+            </h1>
+
+            <p class="lead animate-in" style="animation-delay: 0.2s;" id="subtitulo-principal">
+                Conectando gerações através da tecnologia
+                <button class="btn btn-sm btn-outline-secondary ms-2" onclick="lerTexto('#subtitulo-principal')">🔊</button>
+            </p>
+
             <a href="#conteudo" class="btn btn-light mt-3 animate-in" style="animation-delay: 0.4s;">Veja como funciona</a>
             
             <!-- Botão de login -->
@@ -44,44 +52,57 @@
         
     </header>
 
-    <section class="mt-5 text-center animate-in">
-        <h2>Objetivo do Projeto</h2>
-        <p class="lead">Facilitar o acesso à tecnologia por idosos, promovendo inclusão digital com um site simples, acessível e pensado para suas necessidades.</p>
-      </section>
+    <section class="mt-5 px-3 text-center animate-in" id="objetivo-projeto">
+        <h2 class="mb-3">Objetivo do Projeto
+            <button class="btn btn-sm btn-outline-secondary ms-2" onclick="lerTexto('#objetivo-projeto')">🔊</button>
+        </h2>
+        <p class="mx-auto" style="max-width: 800px;">
+            Nosso objetivo é facilitar o acesso à tecnologia para idosos, promovendo a inclusão digital por meio de um site intuitivo, acessível e adaptado às suas necessidades, garantindo uma experiência agradável e eficiente.
+        </p>
+    </section>
 
-      <section class="mt-5">
-        <h2 class="text-center mb-4 animate-in">Funcionalidades do Site</h2>
-        <div class="row text-center">
-          <div class="col-md-4 mb-3">
+    <section class="mt-5 d-flex flex-column align-items-center" id="funcionalidades">
+        <h2 class="text-center mb-4 animate-in" id="funcionalidades-titulo">
+            Funcionalidades do Site
+            <button class="btn btn-sm btn-outline-secondary ms-2" onclick="lerTexto('#funcionalidades-titulo')">🔊</button>
+        </h2>
+        <div class="row justify-content-center text-center mx-3"></div>
+            <div class="col-md-4 mb-3">
             <div class="card p-3 animate-in">
-              <h3>🖱️ Botões Aumentados</h3>
-              <p>Fáceis de clicar, pensados para mãos mais lentas.</p>
+                <h3>🔊 Leitura de Texto</h3>
+                <p>Ative o recurso de leitura em voz alta para ouvir o conteúdo do site de forma clara e prática.</p>
             </div>
-          </div>
-          <div class="col-md-4 mb-3">
+            </div>
+
+            <div class="col-md-4 mb-3">
             <div class="card p-3 animate-in">
-              <h3>🔊 Leitura em Voz Alta</h3>
-              <p>Ajuda quem tem dificuldade para ler (você pode ativar isso depois).</p>
+                <h3>🖥️ Modo Simples</h3>
+                <p>Ative o Modo Simples para uma interface mais limpa de cores fortes e animações.</p>
             </div>
-          </div>
-          <div class="col-md-4 mb-3">
+            </div>
+
+            <div class="col-md-4 mb-3">
             <div class="card p-3 animate-in">
-              <h3>🎨 Contraste e Fonte</h3>
-              <p>Deixe o site do seu jeito com ajustes rápidos.</p>
+                <h3>🎨 Contraste e Fonte</h3>
+                <p>Personalize a aparência do site ajustando o contraste e o tamanho da fonte para uma experiência mais confortável.</p>
             </div>
-          </div>
+            </div>
         </div>
-      </section>
+
+        </div>
+    </section>
       
 
     <main class="container my-5" id="conteudo">
         <section class="row align-items-center">
-            <div class="col-md-6 animate-in">
-                <h2>Por que aprender tecnologia?</h2>
+            <div class="col-md-6 animate-in" id="porque-utilizar">
+                <h2>Por que utilizar o site Conectando Gerações é bom?
+                    <button class="btn btn-sm btn-outline-secondary ms-2" onclick="lerTexto('#porque-utilizar')">🔊</button>
+                </h2>
                 <ul class="list-unstyled">
-                    <li class="mb-3">📱 Fale com quem você ama</li>
-                    <li class="mb-3">💻 Use serviços online com facilidade</li>
-                    <li class="mb-3">🎓 Aprenda coisas novas e úteis</li>
+                    <li class="mb-3">🌟 Interface simples e intuitiva, ideal para iniciantes. O design do site foi pensado para ser fácil de navegar, com botões grandes e menus claros, garantindo que qualquer pessoa, independentemente de sua experiência com tecnologia, consiga utilizá-lo sem dificuldades.</li>
+                    <li class="mb-3">📚 Recursos educativos para aprender no seu ritmo. Oferecemos tutoriais passo a passo e dicas práticas que permitem que os usuários aprendam de forma tranquila e sem pressa, respeitando o tempo de cada um.</li>
+                    <li class="mb-3">🤝 Promove a inclusão digital e a conexão entre gerações. O site incentiva a interação entre jovens e idosos, criando oportunidades para que compartilhem experiências e aprendam juntos, fortalecendo os laços familiares e sociais.</li>
                 </ul>
             </div>
             <div class="col-md-6 animate-in" style="animation-delay: 0.2s;">
