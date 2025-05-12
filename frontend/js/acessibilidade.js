@@ -1,3 +1,13 @@
+function ativarModoSimples() {
+  if (document.body.classList.contains('modo-simples')) {
+    document.body.classList.remove('modo-simples');
+    localStorage.removeItem('modoSimples');
+  } else {
+    document.body.classList.add('modo-simples');
+    localStorage.setItem('modoSimples', 'true');
+  }
+}
+
 let fontSize = parseInt(getComputedStyle(document.body).fontSize);
 
 function updatePreferences() {
@@ -33,10 +43,30 @@ function toggleContrast() {
   updatePreferences();
 }
 
-// Restaurar preferências ao carregar a página
+function lerTexto(id) {
+  const elemento = document.getElementById(id);
+  if (elemento) {
+    const texto = elemento.innerText || elemento.textContent;
+    const fala = new SpeechSynthesisUtterance(texto);
+    fala.lang = 'pt-BR';
+    speechSynthesis.cancel(); // Para evitar sobreposição
+    speechSynthesis.speak(fala);
+  }
+}
+
+function lerTextoPagina() {
+  const texto = document.body.innerText;
+  const fala = new SpeechSynthesisUtterance(texto);
+  fala.lang = 'pt-BR';
+  speechSynthesis.cancel();
+  speechSynthesis.speak(fala);
+}
+
 window.onload = () => {
+  // Reaplicando preferências já salvas
   const savedFontSize = localStorage.getItem('fontSize');
   const contrast = localStorage.getItem('highContrast') === 'true';
+  const modoSimples = localStorage.getItem('modoSimples') === 'true';
 
   if (savedFontSize) {
     fontSize = parseInt(savedFontSize);
@@ -47,5 +77,9 @@ window.onload = () => {
     document.body.classList.add('high-contrast');
     document.body.style.background = '#000';
     document.body.style.color = '#fff';
+  }
+
+  if (modoSimples) {
+    document.body.classList.add('modo-simples');
   }
 };

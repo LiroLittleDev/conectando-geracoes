@@ -12,7 +12,7 @@
     <div class="accessibility-toolbar">
         <!-- Botões para desktop -->
         <div class="btn-group">
-            <a href="simple.html" class="btn btn-primary m-1">Modo Simples</a>
+            <button class="btn btn-light m-1" onclick="ativarModoSimples()">Modo Simples</button>
             <button class="btn btn-light m-1" onclick="increaseFont()">+ Texto</button>
             <button class="btn btn-light m-1" onclick="decreaseFont()">- Texto</button>
             <button class="btn btn-light m-1" onclick="toggleContrast()">Contraste</button>
@@ -24,7 +24,7 @@
                 ⚙️
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="simple.html">Modo Simples</a></li>
+                <li> <button class="btn btn-light m-1" onclick="ativarModoSimples()">Modo Simples</button>
                 <li><button class="dropdown-item" onclick="increaseFont()">+ Texto</button></li>
                 <li><button class="dropdown-item" onclick="decreaseFont()">- Texto</button></li>
                 <li><button class="dropdown-item" onclick="toggleContrast()">Contraste</button></li>
@@ -72,11 +72,6 @@
           </div>
         </div>
       </section>
-    
-      <figure class="text-center">
-        <img src="img/idosos-navegando.jpg" class="img-fluid rounded" alt="Idosa navegando no site">
-        <figcaption class="mt-2">Navegar com facilidade aproxima gerações</figcaption>
-      </figure>
       
 
     <main class="container my-5" id="conteudo">
@@ -90,7 +85,7 @@
                 </ul>
             </div>
             <div class="col-md-6 animate-in" style="animation-delay: 0.2s;">
-                <img src="img/idosos-tecnologia.jpg" alt="Idosos usando tecnologia com alegria" class="img-fluid rounded"/>
+                <img src="../img/idoso_careca_celular.png" alt="Idosos usando tecnologia com alegria" class="img-fluid rounded img-rounded"/>
             </div>
         </section>
 

@@ -22,10 +22,20 @@ body {
 }
 
 .accessibility-toolbar {
-    position: fixed;
-    right: 1rem;
-    top: 1rem;
-    z-index: 1000;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.accessibility-toolbar .btn-group {
+    display: flex;
+    gap: 0.5rem;
 }
 
 .accessibility-btn {
@@ -169,4 +179,67 @@ body {
     border-color: #888 !important;
 }
 
-  
+.img-small {
+    width: 100px;
+    height: auto;
+}
+
+.img-medium {
+    width: 300px;
+    height: auto;
+}
+
+.img-large {
+    width: 600px;
+    height: auto;
+}
+
+.img-rounded {
+    border-radius: 10px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-shadow {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modo-simples {
+    font-size: 22px;
+    background-color: #fff !important;
+    color: #000 !important;
+    line-height: 1.8;
+}
+
+/* Modo Simples (não radical) */
+.modo-simples {
+  font-size: 18px;
+  background: #fefefe !important;
+  color: #111 !important;
+  font-family: sans-serif;
+}
+
+.modo-simples .hero-section {
+  background: #ddd !important;
+  color: #000 !important;
+}
+
+.modo-simples .btn,
+.modo-simples .accessibility-btn {
+  background-color: #e0e0e0 !important;
+  color: #000 !important;
+  border: 1px solid #ccc !important;
+}
+
+.modo-simples .card {
+  background-color: #fafafa !important;
+  box-shadow: none !important;
+}
+
+.modo-simples .dropdown,
+.modo-simples .animate-in {
+  animation: none !important;
+}
+
